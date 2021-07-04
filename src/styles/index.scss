@@ -1,0 +1,14 @@
+/**
+ * sass 语法：下划线开头的 scss 文件，是 sass 的内置 partial 语法，告诉 sass 不要编译到 css 文件（只能被导入），但导入时可以不用书写下划线
+*/
+@import './variables';
+
+@import './reboot';
+
+//mixin
+@import './mixin';
+
+// btn
+@import '../components//Button//style';
+
+@import '../components/Menu/style';
