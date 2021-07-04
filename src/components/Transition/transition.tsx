@@ -9,7 +9,7 @@ interface TransitionProps extends CSSTransitionProps {
   wrapper? : boolean,
 }
 
-const Transition: React.FC<TransitionProps> = (props) => {
+export const Transition: React.FC<TransitionProps> = (props) => {
   const {
     children,
     classNames,
@@ -30,5 +30,3 @@ Transition.defaultProps = {
   unmountOnExit: true,
   appear: true,
 }
-
-export default Transition
