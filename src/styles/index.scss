@@ -8,7 +8,11 @@
 //mixin
 @import './mixin';
 
+@import 'animation';
+
 // btn
 @import '../components//Button//style';
 
 @import '../components/Menu/style';
+
+@import '../components/Icon/style';
