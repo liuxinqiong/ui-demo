@@ -1,30 +1,49 @@
 {
-  "name": "ui-demo",
-  "version": "0.1.0",
-  "private": true,
+  "name": "try-ui-demo",
+  "version": "0.0.2",
+  "private": false,
+  "description": "React components library demo",
+  "author": "liuxinqiong",
+  "license": "MIT",
+  "keywords": [
+    "React",
+    "Component",
+    "UI",
+    "demo"
+  ],
+  "homepage": "https://github.com/liuxinqiong/ui-demo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuxinqiong/ui-demo"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
-    "@types/jest": "24.0.23",
-    "@types/node": "12.12.14",
-    "@types/react": "16.9.13",
-    "@types/react-dom": "16.9.4",
-    "@types/react-transition-group": "^4.2.3",
     "classnames": "^2.3.1",
+    "react-transition-group": "^4.3.0"
+  },
+  "peerDependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0",
-    "react-transition-group": "^4.3.0",
-    "typescript": "3.7.2"
+    "react-dom": "^16.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -52,6 +71,11 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.14",
+    "@types/react": "16.9.13",
+    "@types/react-dom": "16.9.4",
+    "@types/react-transition-group": "^4.2.3",
     "@storybook/addon-actions": "^6.3.2",
     "@storybook/addon-essentials": "^6.3.2",
     "@storybook/addon-links": "^6.3.2",
@@ -60,6 +84,11 @@
     "@storybook/react": "^6.3.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.0",
+    "rimraf": "^3.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0",
+    "typescript": "3.7.2"
   }
 }
